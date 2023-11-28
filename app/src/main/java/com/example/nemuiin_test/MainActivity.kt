@@ -41,10 +41,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.nemuiin_test.ui.theme.Nemuiin_testTheme
 import com.google.android.material.search.SearchBar
+import com.google.firebase.FirebaseApp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        FirebaseApp.initializeApp(this)
         setContent {
             Nemuiin_testTheme {
                 // A surface container using the 'background' color from the theme

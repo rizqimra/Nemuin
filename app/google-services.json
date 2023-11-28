@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "914929541392",
+    "firebase_url": "https://nemuin-psi-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "nemuin-psi",
+    "storage_bucket": "nemuin-psi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:914929541392:android:17dd649b20e8ae6b908595",
+        "android_client_info": {
+          "package_name": "com.example.nemuiin_test"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnAgdYElTkKQLa2ZogzomapipPaVZmSas"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

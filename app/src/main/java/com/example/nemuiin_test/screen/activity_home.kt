@@ -40,7 +40,6 @@ import androidx.compose.ui.unit.sp
 import com.example.nemuiin_test.R
 import com.example.nemuiin_test.ui.theme.Nemuiin_testTheme
 
-
 @Composable
 fun Home(modifier: Modifier = Modifier) {
     Column(
@@ -68,7 +67,10 @@ fun Home(modifier: Modifier = Modifier) {
         val context: Context = LocalContext.current
 
         Button(
-            onClick = { /* TODO: Add the action you want to perform on button click */ },
+            onClick = {
+                val intent = Intent(context, activity_formHilang::class.java)
+                context.startActivity(intent)
+            },
             modifier = Modifier
                 .fillMaxWidth()
                 .height(220.dp)
@@ -86,7 +88,10 @@ fun Home(modifier: Modifier = Modifier) {
         }
 
         Button(
-            onClick = { /* TODO: Add the action you want to perform on button click */ },
+            onClick = {
+                val intent = Intent(context, activity_formTemuan::class.java)
+                context.startActivity(intent)
+            },
             modifier = Modifier
                 .fillMaxWidth()
                 .height(200.dp)

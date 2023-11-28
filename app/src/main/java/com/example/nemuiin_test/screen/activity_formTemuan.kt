@@ -42,7 +42,16 @@ import androidx.compose.ui.unit.sp
 import com.example.nemuiin_test.R
 import com.example.nemuiin_test.ui.theme.Nemuiin_testTheme
 import com.google.android.material.search.SearchBar
+import com.google.firebase.database.FirebaseDatabase
 
+data class BarangTemuan(
+    val namaBarang: String,
+    val lokasi: String,
+    val tanggal: String,
+    val detail: String,
+    val namaPelapor: String,
+    val kontak: String
+)
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -216,7 +225,21 @@ fun FormTemuan(modifier: Modifier = Modifier) {
             .height(45.dp) // Tinggi tombol
             .padding(horizontal = 125.dp) // Padding horizontal
         Button(
-            onClick = { /* Handle button click */ },
+            onClick = {
+                val database = FirebaseDatabase.getInstance()
+                val reference = database.getReference("barang_temuan")
+
+                val barangTemuan = BarangTemuan(
+                    namaBarangtxt.value,
+                    lokasitxt.value,
+                    tanggaltxt.value,
+                    detailtxt.value,
+                    namaLaportxt.value,
+                    kontaktxt.value
+                )
+
+                reference.push().setValue(barangTemuan)
+            },
             modifier = buttonModifier,
             colors = ButtonDefaults.buttonColors(
                 containerColor = Color(0xFF1892FA)),
