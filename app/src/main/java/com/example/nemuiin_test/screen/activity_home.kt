@@ -23,7 +23,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.nemuiin_test.R
 
 @Composable
-fun Home(navController: NavController) {
+fun Home(navController: NavController, modifier: Modifier = Modifier) {
     Column(
         modifier = Modifier
             .fillMaxWidth()

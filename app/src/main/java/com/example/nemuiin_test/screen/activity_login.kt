@@ -36,13 +36,15 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.nemuiin_test.R
 import com.example.nemuiin_test.ui.theme.Nemuiin_testTheme
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Login(modifier: Modifier = Modifier) {
+fun Login(navController: NavController, modifier: Modifier = Modifier) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -101,8 +103,7 @@ fun Login(modifier: Modifier = Modifier) {
         )
 
         Button(
-            onClick = { /* TODO: Add the action you want to perform on button click */
-                },
+            onClick = { navController.navigate("home") },
             modifier = Modifier
                 .fillMaxWidth()
                 .height(80.dp)
@@ -129,10 +130,7 @@ fun Login(modifier: Modifier = Modifier) {
 
         ClickableText(
             text = AnnotatedString("DAFTAR"),
-            onClick = {
-//                val intent = Intent(context, activity_register::class.java)
-//                context.startActivity(intent)
-            },
+            onClick = { navController.navigate("register") },
             style = TextStyle(
                 fontSize = 16.sp,
                 fontWeight = FontWeight.Bold,
@@ -146,5 +144,6 @@ fun Login(modifier: Modifier = Modifier) {
 @Preview
 @Composable
 fun LoginPreview() {
-    Login()
+    val navController = rememberNavController()
+    Login(navController)
 }

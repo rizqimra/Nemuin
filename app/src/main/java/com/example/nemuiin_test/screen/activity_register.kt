@@ -33,12 +33,14 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.nemuiin_test.R
 import com.example.nemuiin_test.ui.theme.Nemuiin_testTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Register(modifier: Modifier = Modifier) {
+fun Register(navController: NavController, modifier: Modifier = Modifier) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -117,7 +119,7 @@ fun Register(modifier: Modifier = Modifier) {
         )
 
         Button(
-            onClick = { /* TODO: Add the action you want to perform on button click */ },
+            onClick = { navController.navigate("login") },
             modifier = Modifier
                 .fillMaxWidth()
                 .height(80.dp)
@@ -144,7 +146,7 @@ fun Register(modifier: Modifier = Modifier) {
         ClickableText(
             text = AnnotatedString("MASUK"),
             onClick = {
-                /* TODO: Add the action you want to perform on button click */
+                navController.navigate("login")
             },
             style = TextStyle(
                 fontSize = 16.sp,
@@ -159,5 +161,6 @@ fun Register(modifier: Modifier = Modifier) {
 @Preview
 @Composable
 fun RegisterPreview() {
-    Register()
+    val navController = rememberNavController()
+    Register(navController)
 }
