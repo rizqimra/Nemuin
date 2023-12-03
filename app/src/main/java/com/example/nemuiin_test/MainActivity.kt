@@ -32,8 +32,10 @@ class MainActivity : ComponentActivity() {
                 composable("login") { Login(navController) }
                 composable("register") { Register(navController) }
                 composable("home") { Home(navController) }
-                composable("formHilang") { FormHilang() }
-                composable("formTemuan") { FormTemuan() }
+                composable("formHilang") { FormHilang(navController) }
+                composable("formTemuan") { FormTemuan(navController) }
+                composable("listBarangHilang") { ListBarangHilangContent(navController) }
+                composable("listBarangTemuan") { ListBarangTemuanContent(navController) }
             }
         }
     }

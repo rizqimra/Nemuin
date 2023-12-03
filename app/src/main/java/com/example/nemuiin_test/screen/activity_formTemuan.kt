@@ -39,6 +39,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.nemuiin_test.R
 import com.example.nemuiin_test.ui.theme.Nemuiin_testTheme
 import com.google.android.material.search.SearchBar
@@ -55,7 +57,7 @@ data class BarangTemuan(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun FormTemuan(modifier: Modifier = Modifier) {
+fun FormTemuan(navController: NavController, modifier: Modifier = Modifier) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -239,6 +241,8 @@ fun FormTemuan(modifier: Modifier = Modifier) {
                 )
 
                 reference.push().setValue(barangTemuan)
+
+                navController.navigate("listBarangTemuan")
             },
             modifier = buttonModifier,
             colors = ButtonDefaults.buttonColors(
@@ -257,5 +261,6 @@ fun FormTemuan(modifier: Modifier = Modifier) {
 @Preview
 @Composable
 fun FormTemuanPreview() {
-    FormTemuan()
+    val navController = rememberNavController()
+    FormTemuan(navController)
 }

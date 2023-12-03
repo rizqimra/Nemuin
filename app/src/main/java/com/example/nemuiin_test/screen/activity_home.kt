@@ -49,7 +49,7 @@ fun Home(navController: NavController, modifier: Modifier = Modifier) {
         val context: Context = LocalContext.current
 
         Button(
-            onClick = { navController.navigate("formHilang") },
+            onClick = { navController.navigate("listBarangHilang") },
             modifier = Modifier
                 .fillMaxWidth()
                 .height(220.dp)
@@ -67,7 +67,7 @@ fun Home(navController: NavController, modifier: Modifier = Modifier) {
         }
 
         Button(
-            onClick = { navController.navigate("formTemuan") },
+            onClick = { navController.navigate("listBarangTemuan") },
             modifier = Modifier
                 .fillMaxWidth()
                 .height(200.dp)

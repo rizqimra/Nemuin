@@ -39,6 +39,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.nemuiin_test.R
 import com.example.nemuiin_test.ui.theme.Nemuiin_testTheme
 import com.google.android.material.search.SearchBar
@@ -56,7 +58,7 @@ data class BarangHilang(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun FormHilang(modifier: Modifier = Modifier) {
+fun FormHilang(navController: NavController, modifier: Modifier = Modifier) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -240,6 +242,8 @@ fun FormHilang(modifier: Modifier = Modifier) {
                 )
 
                 reference.push().setValue(barangHilang)
+
+                navController.navigate("listBarangHilang")
             },
             modifier = buttonModifier,
             colors = ButtonDefaults.buttonColors(
@@ -258,5 +262,6 @@ fun FormHilang(modifier: Modifier = Modifier) {
 @Preview
 @Composable
 fun FormHilangPreview() {
-    FormHilang()
+    val navController = rememberNavController()
+    FormHilang(navController)
 }
